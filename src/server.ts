@@ -1,8 +1,4 @@
-console.log("nma gap xaxaxaxaxa xixixixixixix");
+import dotenv from "dotenv";
+dotenv.config();
 
-import moment from "moment";
-const currentTime = moment().format("YYYY MM DD");
-console.log(currentTime);
-
-const person: string = "Sanjar";
-const count: number = 25;
+// CLUSTER => DATABASE => COLLECTION => DOCUMENT
