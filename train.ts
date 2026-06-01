@@ -36,20 +36,38 @@
 
 //N-task 
 
-function palindromCheck(str: string): boolean {
+// function palindromCheck(str: string): boolean {
 
-  //  Stringni teskari qilib olib keyin 
-  let reversed: string = str.split("").reverse().join("");
+//   //  Stringni teskari qilib olib keyin 
+//   let reversed: string = str.split("").reverse().join("");
 
-  //  Teskari va asliga solishtiramiz return true yoki fasle qaytarish kk
-  if (str === reversed) { // solishtirish qismi
-    return true;  //tpogri bolsa
-  } else {
-    return false; //aks xolda false retuen qiladi
+//   //  Teskari va asliga solishtiramiz return true yoki fasle qaytarish kk
+//   if (str === reversed) { // solishtirish qismi
+//     return true;  //tpogri bolsa
+//   } else {
+//     return false; //aks xolda false retuen qiladi
+//   }
+// }
+
+// console.log(palindromCheck("aka")); // true
+// console.log(palindromCheck("mama")); // false
+
+
+
+function calculateSumOfNumbers(arr: any[]): number {
+
+  // noldan boshlanadi
+  let Num: number = 0;
+
+  //  tekshiramiz
+  for (let item of arr) {
+    if (typeof item === "number") {
+      Num = Num + item;
+    }
   }
+
+  // qiymatni return qilamiz
+  return Num;
 }
 
-console.log(palindromCheck("aka")); // true
-console.log(palindromCheck("mama")); // false
-
-
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 25]));
