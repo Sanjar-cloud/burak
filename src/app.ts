@@ -7,21 +7,21 @@ import { MORGAN_FORMAT } from "./libs/config";
 
 /** 1-Entrance **/
 const app = express(); // express ni call 
-app.use(express.static(path.join(__dirname, "public")));  // app.use ===> middle ware
-app.use(express.urlencoded({extended: true})); // middle ware pattern
-app.use(express.json()); //rest api sifatida requiste  bolib body orqali kelayotgan datalarni  json farmartda otishiga ruhsat berish
-app.use(morgan (MORGAN_FORMAT));
+app.use(express.static(path.join(__dirname, "public")));  //  middleware DP > public
+app.use(express.urlencoded({extended: true})); //  middleware DP tradational API support / form roqali req
+app.use(express.json()); // middleware DP > Rest API support
+app.use(morgan (MORGAN_FORMAT)); // middleware DP > logging support
 
 /** 2-Session **/
 
 /** 3-Views **/
-app.set('views', path.join(__dirname, 'views' )); //express set  
-app.set("view engine", "ejs"); //view engine ejs eaknligini bildirish
+app.set('views', path.join(__dirname, 'views' )); // views backemda html qurish
+app.set("view engine", "ejs"); 
 
 /** 4-Routers **/
-app.use("/admin", routerAdmin);//burak backend: bssr ejs:  adminka  loyihamini qurish uchunham ishlatamiz 
-app.use("/", router);  //Middleware design pattern / burak backend: userlar foydalanadi va react loyihamiz uchun rest API  server sifatifa ishlatamiz  
+app.use("/admin", routerAdmin);// adminka loyihamiz
+app.use("/", router);  // REACT loyuhamiz
 
 
 
-export default app; //app file ni export qilamiz => reja da => module.exports = app;
+export default app;
