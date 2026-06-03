@@ -54,20 +54,40 @@
 
 
 
-function calculateSumOfNumbers(arr: any[]): number {
+// function calculateSumOfNumbers(arr: any[]): number {
 
-  // noldan boshlanadi
-  let Num: number = 0;
+//   // noldan boshlanadi
+//   let Num: number = 0;
 
-  //  tekshiramiz
-  for (let item of arr) {
-    if (typeof item === "number") {
-      Num = Num + item;
-    }
+//   //  tekshiramiz
+//   for (let item of arr) {
+//     if (typeof item === "number") {
+//       Num = Num + item;
+//     }
+//   }
+
+//   // qiymatni return qilamiz
+//   return Num;
+// }
+
+// console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 25]));
+
+
+
+//P-task 
+
+function objectToArray(obj: {[key: string]: any}): any[] {
+
+  let result: any[] = [];
+
+  for (let key in obj) {
+    let item = [key, obj[key]];
+    result.push(item);
   }
 
-  // qiymatni return qilamiz
-  return Num;
+  return result;
 }
 
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 25]));
+console.log(objectToArray({a: 10, b: 20}));
+// [["a", 10], ["b", 20]] 
+
