@@ -78,16 +78,20 @@
 
 function objectToArray(obj: {[key: string]: any}): any[] {
 
+  //  array yaratamiz
   let result: any[] = [];
 
+  // har bir  kalit va qiymatni olamiz
   for (let key in obj) {
-    let item = [key, obj[key]];
+    let item = [key, obj[key]];  // variable nomi -> a ichidagi value -> 10
     result.push(item);
   }
 
+  // return  qaytaramiz
   return result;
 }
 
 console.log(objectToArray({a: 10, b: 20}));
-// [["a", 10], ["b", 20]] 
+// [["a", 10], ["b", 20]]
+
 
