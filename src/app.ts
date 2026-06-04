@@ -19,8 +19,8 @@ app.set('views', path.join(__dirname, 'views' )); // views backemda html qurish
 app.set("view engine", "ejs"); 
 
 /** 4-Routers **/
-app.use("/admin", routerAdmin);// adminka loyihamiz
-app.use("/", router);  // REACT loyuhamiz
+app.use("/admin", routerAdmin);// BSSR adminka loyihamiz
+app.use("/", router);  // REACT user loyuhamiz
 
 
 
