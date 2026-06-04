@@ -76,22 +76,37 @@
 
 //P-task 
 
-function objectToArray(obj: {[key: string]: any}): any[] {
+// function objectToArray(obj: {[key: string]: any}): any[] {
 
-  //  array yaratamiz
-  let result: any[] = [];
+//   //  array yaratamiz
+//   let result: any[] = [];
 
-  // har bir  kalit va qiymatni olamiz
-  for (let key in obj) {
-    let item = [key, obj[key]];  // variable nomi -> a ichidagi value -> 10
-    result.push(item);
-  }
+//   // har bir  kalit va qiymatni olamiz
+//   for (let key in obj) {
+//     let item = [key, obj[key]];  // variable nomi -> a ichidagi value -> 10
+//     result.push(item);
+//   }
 
-  // return  qaytaramiz
-  return result;
-}
+//   // return  qaytaramiz
+//   return result;
+// }
 
-console.log(objectToArray({a: 10, b: 20}));
+// console.log(objectToArray({a: 10, b: 20}));
 // [["a", 10], ["b", 20]]
 
 
+
+//Q-task 
+
+function hasProperty(obj: {[key: string]: any}, string: string): boolean {
+
+  // str object ichida bormi tekshiramiz
+  if (string in obj) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(hasProperty({name: "BMW", model: "M3"}, "model")); // true return qiladi
+console.log(hasProperty({name: "BMW", model: "M3"}, "year"));  // false return qiladi
