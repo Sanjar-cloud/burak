@@ -98,15 +98,36 @@
 
 //Q-task 
 
-function hasProperty(obj: {[key: string]: any}, string: string): boolean {
+// function hasProperty(obj: {[key: string]: any}, string: string): boolean {
 
-  // str object ichida bormi tekshiramiz
-  if (string in obj) {
-    return true;
-  } else {
-    return false;
+//   // str object ichida bormi tekshiramiz
+//   if (string in obj) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// console.log(hasProperty({name: "BMW", model: "M3"}, "model")); // true return qiladi
+// console.log(hasProperty({name: "BMW", model: "M3"}, "year"));  // false return qiladi
+
+
+//R-task
+function calculate(str: string): number {
+
+  
+  let qiymat1: string[] = str.split("+");
+
+  //  noldan boshlanadi
+  let javob: number = 0;
+
+  // Har qiymatni qoshamiz
+  for (let qiymat2 of qiymat1) {
+    javob = javob + Number(qiymat2);
   }
+
+  // resultni qaytaramiz
+  return javob;
 }
 
-console.log(hasProperty({name: "BMW", model: "M3"}, "model")); // true return qiladi
-console.log(hasProperty({name: "BMW", model: "M3"}, "year"));  // false return qiladi
+console.log(calculate("7+11"));  // 15
