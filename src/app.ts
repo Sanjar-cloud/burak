@@ -5,6 +5,15 @@ import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
 
+import session from "express-session";
+import ConnectMongoDB from "connect-mongodb-session"; 
+
+const MongoDBStore = ConnectMongoDB(session);
+const store = new MongoDBStore({
+  uri: String(process.env.MONGO_URL),
+  collection: 'sessions'
+});
+
 /** 1-Entrance **/
 const app = express(); // express ni call 
 app.use(express.static(path.join(__dirname, "public")));  //  middleware DP > public
@@ -13,6 +22,18 @@ app.use(express.json()); // middleware DP > Rest API support
 app.use(morgan (MORGAN_FORMAT)); // middleware DP > logging support
 
 /** 2-Session **/
+app.use(
+    session({
+     secret: String(process.env.SESSION_SECRET),
+     cookie: {
+      maxAge: 1000 * 3600 * 6,  // 6hours
+     },
+     store: store,
+     resave: true,
+     saveUninitialized: true    
+    })
+);
+
 
 /** 3-Views **/
 app.set('views', path.join(__dirname, 'views' )); // views backemda html qurish
