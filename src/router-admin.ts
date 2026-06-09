@@ -1,6 +1,8 @@
 import express from "express";
 const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant.controller";
+import productController from "./controllers/product.controller";
+import makeUploader from "./libs/utils/uploader";
 
 // Restaurant router
 routerAdmin.get("/", restaurantController.goHome );
@@ -12,7 +14,10 @@ routerAdmin
 
 routerAdmin
 .get("/signup", restaurantController.getSignup)
-.post("/signup", restaurantController.processSignup);
+.post(
+    "/signup",
+    makeUploader("members").single("memberimage"),
+    restaurantController.processSignup);
 
 routerAdmin
 .get("/logout", restaurantController.logout);
@@ -22,6 +27,23 @@ routerAdmin
 
 
 //Product router
+routerAdmin.get(
+    "/product/all", 
+    restaurantController.verifyRestaurant,
+    productController.getAllProducts
+);
+routerAdmin.post(
+    "/product/create",
+    restaurantController.verifyRestaurant,
+    makeUploader("products").array("productimage" ,7),
+    productController.creatNewProduct
+);
+routerAdmin.post(
+    "/product/:id", 
+    restaurantController.verifyRestaurant,
+    productController.updateChosenProduct
+ );
+
 // User router  
 
 export default routerAdmin;
