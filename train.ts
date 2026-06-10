@@ -113,21 +113,41 @@
 
 
 //R-task
-function calculate(str: string): number {
+// function calculate(str: string): number {
 
   
-  let qiymat1: string[] = str.split("+");
+//   let qiymat1: string[] = str.split("+");
 
-  //  noldan boshlanadi
-  let javob: number = 0;
+//   //  noldan boshlanadi
+//   let javob: number = 0;
 
-  // Har qiymatni qoshamiz
-  for (let qiymat2 of qiymat1) {
-    javob = javob + Number(qiymat2);
+//   // Har qiymatni qoshamiz
+//   for (let qiymat2 of qiymat1) {
+//     javob = javob + Number(qiymat2);
+//   }
+
+//   // resultni qaytaramiz
+//   return javob;
+// }
+
+// console.log(calculate("7+11"));  // 15
+
+
+//S-task 
+
+function missingNumber(arr: number[]): number {
+
+  // array uzunligini check qilamiz
+  let qiymat: number = arr.length;
+
+  // 0 dan n gacha tekshiramiz
+  for (let i = 0; i <= qiymat; i++) {
+    if (arr.includes(i) === false) {
+      return i;
+    }
   }
 
-  // resultni qaytaramiz
-  return javob;
+ return -1;
 }
 
-console.log(calculate("7+11"));  // 15
+console.log(missingNumber([3, 0, 1])); // 2
