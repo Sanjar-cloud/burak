@@ -135,19 +135,45 @@
 
 //S-task 
 
-function missingNumber(arr: number[]): number {
+// function missingNumber(arr: number[]): number {
 
-  // array uzunligini check qilamiz
-  let qiymat: number = arr.length;
+//   // array uzunligini check qilamiz
+//   let qiymat: number = arr.length;
 
-  // 0 dan n gacha tekshiramiz
-  for (let i = 0; i <= qiymat; i++) {
-    if (arr.includes(i) === false) {
-      return i;
-    }
+//   // 0 dan n gacha tekshiramiz
+//   for (let i = 0; i <= qiymat; i++) {
+//     if (arr.includes(i) === false) {
+//       return i;
+//     }
+//   }
+
+//  return -1;
+// }
+
+// console.log(missingNumber([3, 0, 1])); // 2
+
+
+//T-task 
+
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+
+  // birlashtiramiz
+  let combined: number[] = [];
+
+  for (let son of arr1) {
+    combined.push(son);
   }
 
- return -1;
+  for (let son2 of arr2) {
+    combined.push(son2);
+  }
+
+  //  tartiblaymiz
+  combined.sort((a, b) => a - b);
+
+  // javobni  return qilamiz
+  return combined;
 }
 
-console.log(missingNumber([3, 0, 1])); // 2
+console.log(mergeSortedArrays([0,1,4,31], [3,2,30]));
+
