@@ -155,25 +155,46 @@
 
 //T-task 
 
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
 
-  // birlashtiramiz
-  let combined: number[] = [];
+//   // birlashtiramiz
+//   let combined: number[] = [];
 
-  for (let son of arr1) {
-    combined.push(son);
+//   for (let son of arr1) {
+//     combined.push(son);
+//   }
+
+//   for (let son2 of arr2) {
+//     combined.push(son2);
+//   }
+
+//   //  tartiblaymiz
+//   combined.sort((a, b) => a - b);
+
+//   // javobni  return qilamiz
+//   return combined;
+// }
+
+// console.log(mergeSortedArrays([0,1,4,31], [3,2,30]));
+
+
+//U-task
+
+function sumOdds(num: number): number {
+
+  //  noldan boshlaymiz
+  let count: number = 0;
+
+  // 0 dan num gacha tekshiramiz
+  for (let i = 0; i < num; i++) {
+    if (i % 2 !== 0) {
+      count = count + 1;
+    }
   }
 
-  for (let son2 of arr2) {
-    combined.push(son2);
-  }
-
-  //  tartiblaymiz
-  combined.sort((a, b) => a - b);
-
-  // javobni  return qilamiz
-  return combined;
+  // resultni qaytaramiz
+  return count;
 }
 
-console.log(mergeSortedArrays([0,1,4,31], [3,2,30]));
-
+console.log(sumOdds(9));  // 4
+console.log(sumOdds(11)); // 5
