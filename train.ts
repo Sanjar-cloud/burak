@@ -180,21 +180,44 @@
 
 //U-task
 
-function sumOdds(num: number): number {
+// function sumOdds(num: number): number {
 
-  //  noldan boshlaymiz
-  let count: number = 0;
+//   //  noldan boshlaymiz
+//   let count: number = 0;
 
-  // 0 dan num gacha tekshiramiz
-  for (let i = 0; i < num; i++) {
-    if (i % 2 !== 0) {
-      count = count + 1;
+//   // 0 dan num gacha tekshiramiz
+//   for (let i = 0; i < num; i++) {
+//     if (i % 2 !== 0) {
+//       count = count + 1;
+//     }
+//   }
+
+//   // resultni qaytaramiz
+//   return count;
+// }
+
+// console.log(sumOdds(9));  // 4
+// console.log(sumOdds(11)); // 5
+
+
+//V-task 
+
+function countChars(str: string): object {
+
+  //  bosh object yaratmiz
+  let result: {[key: string]: number} = {};
+
+  //  harfni tekshiramiz
+  for (let letter of str) {
+    if (result[letter]) {
+      result[letter] = result[letter] + 1;
+    } else {
+      result[letter] = 1;
     }
   }
 
-  // resultni qaytaramiz
-  return count;
+  // result qaytaramiz
+  return result;
 }
 
-console.log(sumOdds(9));  // 4
-console.log(sumOdds(11)); // 5
+console.log(countChars("Sanjar")); // {h:1, e:1, l:2, o:1}
