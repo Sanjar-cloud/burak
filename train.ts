@@ -202,22 +202,47 @@
 
 //V-task 
 
-function countChars(str: string): object {
+// function countChars(str: string): object {
 
-  //  bosh object yaratmiz
-  let result: {[key: string]: number} = {};
+//   //  bosh object yaratmiz
+//   let result: {[key: string]: number} = {};
 
-  //  harfni tekshiramiz
-  for (let letter of str) {
-    if (result[letter]) {
-      result[letter] = result[letter] + 1;
-    } else {
-      result[letter] = 1;
-    }
+//   //  harfni tekshiramiz
+//   for (let letter of str) {
+//     if (result[letter]) {
+//       result[letter] = result[letter] + 1;
+//     } else {
+//       result[letter] = 1;
+//     }
+//   }
+
+//   // result qaytaramiz
+//   return result;
+// }
+
+// console.log(countChars("Sanjar")); // 
+
+
+//w-task 
+
+function chunkArray(arr: number[], size: number): number[][] {
+
+  // array yaratamiz
+  let result: number[][] = [];
+
+  // qadam va qadam otamiz
+  for (let i = 0; i < arr.length; i = i + size) {
+
+    // Har birini olamiz
+    let ushla: number[] = arr.slice(i, i + size);
+
+    // arrayga qoshamiz
+    result.push(ushla);
   }
 
-  // result qaytaramiz
+  // retirn qilamiz
   return result;
 }
 
-console.log(countChars("Sanjar")); // 
+console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
+
