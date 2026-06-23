@@ -220,4 +220,4 @@ function countChars(str: string): object {
   return result;
 }
 
-console.log(countChars("Sanjar")); // {h:1, e:1, l:2, o:1}
+console.log(countChars("Sanjar")); // 

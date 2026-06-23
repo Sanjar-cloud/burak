@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended: true})); //  middleware DP tradational API
 app.use(express.json()); // middleware DP > Rest API support
 app.use(morgan (MORGAN_FORMAT)); // middleware DP > logging support
 
-/** 2-Session **/
+/** 2-Session **/ //req + session > tamga yaratish + tamga oqish 
 app.use(
     session({
      secret: String(process.env.SESSION_SECRET),
