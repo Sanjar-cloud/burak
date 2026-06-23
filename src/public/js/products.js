@@ -44,8 +44,6 @@ $(".new-product-status").on("change", async function (e) {
         alert("Product update failed!");
     }
 });
-
-
 });
 
 
