@@ -225,24 +225,51 @@
 
 //w-task 
 
-function chunkArray(arr: number[], size: number): number[][] {
+// function chunkArray(arr: number[], size: number): number[][] {
 
-  // array yaratamiz
-  let result: number[][] = [];
+//   // array yaratamiz
+//   let result: number[][] = [];
 
-  // qadam va qadam otamiz
-  for (let i = 0; i < arr.length; i = i + size) {
+//   // qadam va qadam otamiz
+//   for (let i = 0; i < arr.length; i = i + size) {
 
-    // Har birini olamiz
-    let ushla: number[] = arr.slice(i, i + size);
+//     // Har birini olamiz
+//     let ushla: number[] = arr.slice(i, i + size);
 
-    // arrayga qoshamiz
-    result.push(ushla);
+//     // arrayga qoshamiz
+//     result.push(ushla);
+//   }
+
+//   // retirn qilamiz
+//   return result;
+// }
+
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
+
+//X-task
+
+function countOccurrences(obj: {[key: string]: any}, str: string): number {
+
+  //noldan boshlaymiz
+  let count: number = 0;
+
+  // har kalitni tekshiramiz
+  for (let key in obj) {
+
+    // key --> qidirayotgan stringga tengmi
+    if (key === str) {
+      count = count + 1;
+    }
+
+    //  qiymat object bolsa uning ichini ham sanaymiz
+    if (typeof obj[key] === "object") {
+      count = count + countOccurrences(obj[key], str);
+    }
   }
 
-  // retirn qilamiz
-  return result;
+  // result qaytaramiz
+  return count;
 }
 
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
+console.log(countOccurrences({model: "kia", sonet: {model: "hankook", size: 30}}, "model"));
 

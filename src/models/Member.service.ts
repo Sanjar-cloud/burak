@@ -35,6 +35,7 @@ class MemberService {
         memberStatus: { $ne: MemberStatus.DELETE},
        },
        { memberNick: 1, memberPassword: 1, memberStatus: 1}
+       
      )
      .exec();
    if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
