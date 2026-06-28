@@ -248,28 +248,49 @@
 
 //X-task
 
-function countOccurrences(obj: {[key: string]: any}, str: string): number {
+// function countOccurrences(obj: {[key: string]: any}, str: string): number {
 
-  //noldan boshlaymiz
-  let count: number = 0;
+//   //noldan boshlaymiz
+//   let count: number = 0;
 
-  // har kalitni tekshiramiz
-  for (let key in obj) {
+//   // har kalitni tekshiramiz
+//   for (let key in obj) {
 
-    // key --> qidirayotgan stringga tengmi
-    if (key === str) {
-      count = count + 1;
-    }
+//     // key --> qidirayotgan stringga tengmi
+//     if (key === str) {
+//       count = count + 1;
+//     }
 
-    //  qiymat object bolsa uning ichini ham sanaymiz
-    if (typeof obj[key] === "object") {
-      count = count + countOccurrences(obj[key], str);
+//     //  qiymat object bolsa uning ichini ham sanaymiz
+//     if (typeof obj[key] === "object") {
+//       count = count + countOccurrences(obj[key], str);
+//     }
+//   }
+
+//   // result qaytaramiz
+//   return count;
+// }
+
+// console.log(countOccurrences({model: "kia", sonet: {model: "hankook", size: 30}}, "model"));
+
+//Y-task
+function findIntersection(quti1: number[], quti2: number[]): number[] {
+
+  // array yaratamiz
+  let result: number[] = [];
+
+  //  arr1 dagi har raqamni tekshiramiz
+  for (let son of quti1) {
+
+    //  arr2 ichida ham bormi?
+    if (quti2.includes(son)) {
+      result.push(son);
     }
   }
 
   // result qaytaramiz
-  return count;
+  return result;
 }
 
-console.log(countOccurrences({model: "kia", sonet: {model: "hankook", size: 30}}, "model"));
+console.log(findIntersection([2,0,1,7], [2,0,1,8]));
 
