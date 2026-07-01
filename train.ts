@@ -274,23 +274,45 @@
 // console.log(countOccurrences({model: "kia", sonet: {model: "hankook", size: 30}}, "model"));
 
 //Y-task
-function findIntersection(quti1: number[], quti2: number[]): number[] {
+// function findIntersection(quti1: number[], quti2: number[]): number[] {
 
-  // array yaratamiz
-  let result: number[] = [];
+//   // array yaratamiz
+//   let result: number[] = [];
 
-  //  arr1 dagi har raqamni tekshiramiz
-  for (let son of quti1) {
+//   //  arr1 dagi har raqamni tekshiramiz
+//   for (let son of quti1) {
 
-    //  arr2 ichida ham bormi?
-    if (quti2.includes(son)) {
-      result.push(son);
+//     //  arr2 ichida ham bormi?
+//     if (quti2.includes(son)) {
+//       result.push(son);
+//     }
+//   }
+
+//   // result qaytaramiz
+//   return result;
+// }
+
+// console.log(findIntersection([2,0,1,7], [2,0,1,8]));
+
+
+//Z-task
+
+function sumEvens(arr: number[]): number {
+
+  //  noldan boshlanadi
+  let x: number = 0;
+
+  //ar raqamni tekshiramiz
+  for (let y of arr) {
+
+    // juft sonmi check qilamiz 
+    if (y % 2 === 0) {
+      x = x + y;
     }
   }
 
-  // result qaytaramiz
-  return result;
+  // reultni  qaytaramiz
+  return x;
 }
 
-console.log(findIntersection([2,0,1,7], [2,0,1,8]));
-
+console.log(sumEvens([1, 2, 3]));
