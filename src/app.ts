@@ -3,6 +3,7 @@ import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from "./libs/config";
 
 import session from "express-session";
@@ -20,6 +21,7 @@ const app = express(); // express ni call
 app.use(express.static(path.join(__dirname, "public")));  //  middleware DP > public
 app.use(express.urlencoded({extended: true})); //  middleware DP tradational API support / form roqali req
 app.use(express.json()); // middleware DP > Rest API support
+app.use(cookieParser());
 app.use(morgan (MORGAN_FORMAT)); // middleware DP > logging support
 
 /** 2-Session **/ //req + session > tamga yaratish + tamga oqish 
