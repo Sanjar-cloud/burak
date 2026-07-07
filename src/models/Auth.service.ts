@@ -10,6 +10,9 @@ class AuthService {
         this.secretToken = process.env.SECRET_TOKEN as string;
     }
 
+
+
+     // member > token
      public async createToken(payload: Member) {
         return new Promise(( resolve, reject ) => {
             const duration = `${AUTH_TIMER}h`;
@@ -26,7 +29,7 @@ class AuthService {
         });
      }   
 
-
+     // token > member
      public async checkAuth(token: string): Promise<Member> {
         const result: Member = (await jwt.verify(token, this.secretToken)) as Member;
         console.log(` ---> [AUTH] memberNick ${result.memberNick}----`);

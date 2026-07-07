@@ -19,9 +19,10 @@ const store = new MongoDBStore({
 /** 1-Entrance **/
 const app = express(); // express ni call 
 app.use(express.static(path.join(__dirname, "public")));  //  middleware DP > public
+app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended: true})); //  middleware DP tradational API support / form roqali req
 app.use(express.json()); // middleware DP > Rest API support
-app.use(cookieParser());
+app.use(cookieParser()); // json web token middleware suport
 app.use(morgan (MORGAN_FORMAT)); // middleware DP > logging support
 
 /** 2-Session **/ //req + session > tamga yaratish + tamga oqish 
