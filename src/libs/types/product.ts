@@ -5,26 +5,36 @@ export interface Product {
     _id: ObjectId; 
     productStatus: ProductStatus;
     productCollection: ProductCollection;
-    productName: String;
+    productName: string;
     productPrice: number;
     productLeftCount: number;
     productSize : ProductSize;
     productVolume: number;
-    productDesc?: String;
-    productImages: String[];
+    productDesc?: string;
+    productImages: string[];
     productViews: number;
+}
+
+export interface ProductInquiry{
+    order: string;
+    page: number;
+    limit: number;
+    productCollection?: ProductCollection;
+    search?: string;
+
+
 }
 
 export interface ProductInput {
     productStatus?: ProductStatus;
     productCollection: ProductCollection;
-    productName: String;
+    productName: string;
     productPrice: number;
     productLeftCount: number;
     productSize?: ProductSize;
     productVolume?: number;
-    productDesc?: String;
-    productImages?: String[];
+    productDesc?: string;
+    productImages?: string[];
     productViews?: number;
 }
 
@@ -32,12 +42,12 @@ export interface ProductUpdateInput {
      _id: ObjectId; 
     productStatus?: ProductStatus;
     productCollection?: ProductCollection;
-    productName?: String;
+    productName?: string;
     productPrice?: number;
     productLeftCount?: number;
     productSize?: ProductSize;
     productVolume?: number;
-    productDesc?: String;
-    productImages?: String[];
+    productDesc?: string;
+    productImages?: string[];
     productViews?: number;
 }
