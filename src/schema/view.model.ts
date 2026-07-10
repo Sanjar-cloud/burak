@@ -26,3 +26,4 @@ const viewSchema = new Schema(
 export default mongoose.model("View", viewSchema);
 
 
+// mongoose.model("View", viewSchema);
