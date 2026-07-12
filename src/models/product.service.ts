@@ -5,7 +5,7 @@ import { T } from "../libs/types/common";
 import { Product, ProductInput, ProductInquiry, ProductUpdateInput } from "../libs/types/product";
 import ProductModel from "../schema/product.model";
 import { ObjectId } from "mongoose";
-import ViewService from "./view.service";
+import ViewService from "./View.service";
 import { ViewInput } from "../libs/types/view";
 import { ViewGroup } from "../libs/enums/view.enum";
 
@@ -86,8 +86,6 @@ public async getProduct(
       .exec();
   }
 }
-
-
   return result;
 }
 
