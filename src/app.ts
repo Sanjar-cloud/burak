@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import path from "path";
 import router from "./router";
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));  //  middleware DP > pu
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended: true})); //  middleware DP tradational API support / form roqali req
 app.use(express.json()); // middleware DP > Rest API support
+app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser()); // json web token middleware suport
 app.use(morgan (MORGAN_FORMAT)); // middleware DP > logging support
 
